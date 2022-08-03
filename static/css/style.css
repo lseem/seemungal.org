@@ -1,0 +1,89 @@
+/* The line height is 1.5*font-size of paragraph = 1.5*14pt = 21pt. So every vertically-spaced object must take up a multiple of 21pt.*/
+
+body {
+	font-family: "Helvetica", sans-serif;
+	max-width: 33em;
+	margin: auto;
+	padding: 10pt;
+	/*background: #fffaf5;*/
+	background: #f9fbff
+}
+
+ul {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+li {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+img {
+	display: block;
+	max-width: 100%;	/* no bigger than the parent element */
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+nav {
+	/*display: block;*/
+	padding: 10pt 0pt;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+nav::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+nav span {
+	/*float: left;*/
+	margin: 0; 
+	padding: 0;
+	font-weight: bold;
+	font-size: 24pt;
+}
+
+nav ul {
+	margin: 0;
+	padding: 10pt 0pt;
+}
+
+nav li {
+	/*float: left;*/
+	display: inline;
+	margin-right: 1em;
+	list-style: none;
+}
+
+.thispage { font-weight: bold; }
+
+nav a {
+	text-decoration: none;
+	color: #44f;
+	white-space: nowrap;
+}
+
+p {
+	font-family: "Times New Roman", "Times", serif;
+	font-size: 14pt;
+	word-spacing: 0.15em;
+	line-height: 1.5;		/* keep line-height, margin-top, and margin-bottom the same */
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+h1 {
+	font-size: 2em;
+	line-height: 1.5;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
