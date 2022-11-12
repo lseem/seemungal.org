@@ -29,6 +29,13 @@ img {
 	margin-right: auto;
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
+	border-radius: 10pt;
+}
+
+#header-img {
+	width: 35em;
+	height: 20em;
+	object-fit: cover;
 }
 
 nav {
