@@ -1,12 +1,56 @@
 /* The line height is 1.5*font-size of paragraph = 1.5*14pt = 21pt. So every vertically-spaced object must take up a multiple of 21pt.*/
+:root {
+	--base-font-size: 12pt;
+	--base-line-height: calc( 1.6 * var(--base-font-size));
+}
 
 body {
-	font-family: "Helvetica", sans-serif;
-	max-width: 33em;
+	font-family: "Helvetica";
+	font-size: var(--base-font-size);
+	color: #333;
+	max-width: calc(33 * var(--base-font-size));
+	line-height: var(--base-line-height);
 	margin: auto;
-	padding: 10pt;
-	/*background: #fffaf5;*/
-	background: #f9fbff
+	padding-top: var(--base-line-height);
+	padding-bottom: var(--base-line-height);
+	padding-left: 10pt;
+	padding-right: 10pt;
+	background: #f9fbff;
+	/*
+	background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.3) 1px, transparent 1px);
+	background-size: 100% var(--base-line-height);
+	*/
+}
+
+p {
+	/*font-family: "Times New Roman", "Times", serif;*/
+	word-spacing: 0.15em;
+	line-height: var(--base-line-height);		/* keep line-height, margin-top, and margin-bottom the same */
+	margin-top: var(--base-line-height);
+	margin-bottom: var(--base-line-height);
+}
+
+h1 {
+	font-size: calc( 1.6 * var(--base-font-size));
+	line-height: calc( 1 * var(--base-line-height));
+	margin-top: calc( 2 * var(--base-line-height));
+	margin-bottom: calc( 1 * var(--base-line-height));
+}
+
+h2 {
+	font-size: calc( 1.4 * var(--base-font-size));
+	line-height: calc( 1 * var(--base-line-height));
+	margin-top: calc( 2 * var(--base-line-height));
+	margin-bottom: calc( 1 * var(--base-line-height));
+}
+
+h1 + h2 {
+	margin-top: calc( 2 * var(--base-font-size) - var(--base-line-height));
+}
+
+a, a:visited {
+	text-decoration: none;
+	/*color: cyan;*/
 }
 
 ul {
@@ -24,13 +68,16 @@ li {
 
 img {
 	display: block;
-	max-width: 100%;	/* no bigger than the parent element */
+	max-width: 100%;
+	max-height: calc( 10 * var(--base-line-height));
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
+	margin-top: var(--base-line-height);
+	margin-bottom: var(--base-line-height);
 	border-radius: 10pt;
 }
+
+/* HEADER AND NAV */
 
 #header-img {
 	width: 35em;
@@ -39,8 +86,6 @@ img {
 }
 
 nav {
-	/*display: block;*/
-	padding: 10pt 0pt;
 	border-bottom: 1px solid black;
 	text-align: center;
 }
@@ -51,21 +96,23 @@ nav::after {
 	clear: both;
 }
 
-nav span {
-	/*float: left;*/
+nav .site-title {
 	margin: 0; 
 	padding: 0;
 	font-weight: bold;
-	font-size: 24pt;
+	font-size: calc( 2 * var(--base-font-size));
+	line-height: var(--base-line-height);
 }
 
 nav ul {
-	margin: 0;
-	padding: 10pt 0pt;
+	margin-top: var(--base-line-height);
+	margin-bottom: var(--base-line-height);
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0pt 0pt;
 }
 
 nav li {
-	/*float: left;*/
 	display: inline;
 	margin-right: 1em;
 	list-style: none;
@@ -79,18 +126,3 @@ nav a {
 	white-space: nowrap;
 }
 
-p {
-	font-family: "Times New Roman", "Times", serif;
-	font-size: 14pt;
-	word-spacing: 0.15em;
-	line-height: 1.5;		/* keep line-height, margin-top, and margin-bottom the same */
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
-}
-
-h1 {
-	font-size: 2em;
-	line-height: 1.5;
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
-}
